@@ -1,8 +1,10 @@
 #!/bin/bash
-echo "Hola, estudiante del taller de GNU/Linux"
 
-#Lectura interactiva del nombre
-echo "Ingrese su nombre: "
-read name
-#Mostrar la variable name
-echo Su nombre es: $name
+if [ -f "$1" ] 				# Si el archivo existe
+then
+	echo El archivo "$1" existe
+	exit 0				# Valor de retorno 0
+else
+	ls				# ls si no existe archivo
+	exit 1				# Valor de retorno 1
+fi
